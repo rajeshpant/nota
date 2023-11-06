@@ -5,9 +5,7 @@ class TableCreator {
 	private $conn;
 
     /**
-
-     * Calls parent constructor, then increments {@link $firstvar}
-
+     * Constructor call when create object 
      */
 
     function __construct($conn) {
@@ -17,8 +15,7 @@ class TableCreator {
 
     }
 	/**
-	 * Method to generate random string
-	 * @return string
+	 * Method to create table if not exist
 	 */
 	private function create(){
 		$sql = "CREATE TABLE IF NOT EXISTS test (
@@ -31,8 +28,8 @@ class TableCreator {
 		$this->conn->query($sql);
 	}
 	/**
-	 * Method to generate random string
-	 * @return string
+	 * Method to insert data in table
+	 * @return integer
 	 */
 	private function fill(){
 		$script_name = $this->random_string();

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 1</title>
+<style>button {display: block; margin: 10px;;}</style>
+</head>
+<body>
+<button class="btn">1</button>
+<button class="btn">2</button>
+<button class="btn">3</button>
+<script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
+<script>
+    $(document).ready(function(){
+        $("body").on('click', '.btn',function(){
+            let curr = $(this).text();console.log($(this).prev().text());
+            if($(this).prev().length >0  ){
+                let prev = $(this).prev('.btn').text();
+                $(this).text(prev);
+                $(this).prev('.btn').text(curr);
+            } else {
+                $(this).text($(this).next('.btn').text());
+                $(this).next('.btn').text(curr)
+            }
+
+            //$(this).hide();
+        });
+});
+</script>
+</body>
+</html>
